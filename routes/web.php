@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ongkirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return redirect('/cek-ongkir');
 });
+
+Route::get('/cek-ongkir', [ongkirController::class,'index']);
+Route::post('/cek-ongkir', [ongkirController::class,'cekOngkir']);
